@@ -1,0 +1,39 @@
+<!-- Watchlist.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arya:wght@400;700&family=Timmana&display=swap" rel="stylesheet">
+    <title>Movie Watchlist</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="./index.html" target="_self">
+                <h1>Find your film</h1>
+            </a>
+            <a href="./watchlist.html" target="_self">
+                <h2 role="button" 
+                    aria-label="My Watchlist" 
+                    tabindex="0"
+                    onclick="location.href='#watchlist'"
+                    onkeydown="if(event.key === 'Enter') location.href='#watchlist'">My Watchlist
+                </h2>
+            </a>
+        </div>
+    </header>
+    <main class="watchlist-container">
+        <h3 class="watchlist-count"></h3>
+        <img src="./images/no-data-initial.png" 
+            alt="No results to display" 
+            class="no-data-initial"/>
+        <div class="watchlist-list"></div>
+    </main>
+    <script src="./watchlist.js" type="module"></script>
+</body>
+</html>

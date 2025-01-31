@@ -1,0 +1,57 @@
+<!-- Index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arya:wght@400;700&family=Timmana&display=swap" rel="stylesheet">
+    <title>Movie Watchlist</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Find your film</h1>
+            <a href="./watchlist.html" target="_self">
+                <h2 role="button" 
+                    aria-label="My Watchlist" 
+                    tabindex="0"
+                    onclick="location.href='#watchlist'"
+                    onkeydown="if(event.key === 'Enter') location.href='#watchlist'">My Watchlist
+                </h2>
+            </a>
+        </div>
+    </header>
+    <div class="search-container">
+        <form id="form" class="form">
+            <input 
+            type="text" 
+            class="search-field"
+            id="search-field"
+            name="movie-title"
+            aria-label="Search for a movie"
+            placeholder="Search for a movie"
+            required
+        >
+        <button 
+            class="search-btn" 
+            id="search-btn"
+            type="submit"
+            aria-label="Search">
+            Search
+        </button>
+        </form>
+    </div>
+    <main class="results-container">
+        <h3 class="results-count"></h3>
+        <img src="./images/no-data-initial.png" 
+            alt="No results to display" 
+            class="no-data-initial"/>
+        <div class="results-list"></div>
+    </main>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
