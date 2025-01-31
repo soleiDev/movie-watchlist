@@ -10,7 +10,7 @@ Movie Watchlist is a simple web page that helps users search for movies and keep
 - View the list of movies to watch
 
 ## Usage
-1. Open your browser and go to `htts://`
+1. Open your browser and go to `[htts://](https://movie-watchlist-scrim.netlify.app/)`
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
