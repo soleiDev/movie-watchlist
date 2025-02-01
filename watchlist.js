@@ -1,6 +1,6 @@
 /* Watchlist.js
     Manages rendering and removing movies from watchlist */
-import { getWatchlist, toggleWatchlist } from "./utils.js";
+import { getWatchlist, toggleWatchlist } from "./utils.js"
 
 const watchlistCount = document.querySelector('.watchlist-count')
 const watchlistList = document.querySelector('.watchlist-list')
@@ -17,7 +17,7 @@ function renderWatchlist() {
                     <div class="movie-details-container">
                         <div class="row-1">
                             <p class="movie-title-p">${movie.Title}</p>
-                            <p class="movie-ratings-p">* ${movie.imdbRating}</p>
+                            <p class="movie-ratings-p">⭐ ${movie.imdbRating}</p>
                         </div>
                         <div class="row-2">
                             <p>${movie.Runtime}</p>

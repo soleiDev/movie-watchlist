@@ -47,3 +47,4 @@ _Ideas to consider: implement caching to save API calls, implement fuzzy search_
 
 ### Optimizations for performance and clarity
 - [x] Code split: manage common fuctions in a utility file for reduced redundancy
+- [x] Remove duplicates from search results before rendering

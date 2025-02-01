@@ -23,19 +23,38 @@ form.addEventListener('submit', async (event) => {
 
 // API Call: Search Movies
 async function searchMovies(movieTitle) {
-
-    const response = await fetch(`https://www.omdbapi.com/?apikey=${myApiKey}&s=${movieTitle}`)
-    const data = await response.json()
-    if(data.Search) fetchMovieDetails(data.Search)
+    try {
+        const response = await fetch(`https://www.omdbapi.com/?apikey=${myApiKey}&s=${movieTitle}`)
+        const data = await response.json()
+        if(data.Search) {
+            fetchMovieDetails(checkDuplicates(data.Search))
+        }
+    } catch(err) {
+        console.error(err)
+    }
 }
 
 // API Call: Fetch movie details (title, poster, ratings, runtime, genre, plot)
 async function fetchMovieDetails(movies) {
-    resultsArray = await Promise.all( movies.map( async(movie) => {
-        const response = await fetch(`https://www.omdbapi.com/?apikey=${myApiKey}&t=${movie.Title}`)
-        return await response.json()
-    }))
-    renderResults()
+    try {
+        resultsArray = await Promise.all( movies.map( async(movie) => {
+            const response = await fetch(`https://www.omdbapi.com/?apikey=${myApiKey}&t=${movie.Title}`)
+            return await response.json()
+        }))
+        renderResults()
+    } catch(err) {
+        console.error(err)
+    }
+}
+
+function checkDuplicates(arr) {
+    const set = new Set()
+    const originals = arr.filter(movie => {
+        if(set.has(movie.Title)) return false
+        set.add(movie.Title)
+        return true
+    })
+    return originals
 }
 
 function renderResults() {
